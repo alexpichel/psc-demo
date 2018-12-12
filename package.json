@@ -1,10 +1,10 @@
 {
-  "name": "nextjs-starter",
+  "name": "PSC",
   "version": "7.0.2",
-  "description": "A starter Next.js project with email and oAuth authentication",
-  "author": "Iain Collins <me@iaincollins.com>",
+  "description": "Search for risk scores",
+  "author": "CJC <alex.pichel@oregon.gov>",
   "license": "ISC",
-  "repository": "https://github.com/iaincollins/nextjs-starter.git",
+  "repository": "https://github.com/alexpichel/psc-demo.git",
   "main": "index.js",
   "dependencies": {
     "babel-core": "^6.26.3",

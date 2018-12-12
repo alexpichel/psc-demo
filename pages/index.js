@@ -16,17 +16,18 @@ export default class extends Page {
           <Container className="mt-2 mb-2">
             <h1 className="display-2 mb-3" style={{fontWeight: 300}}>
               <span style={{fontWeight: 600}}>
-                <span className="mr-3">▲</span>
+                {/* <span className="mr-3">▲</span> */}
+                <span className="icon ion-ios-analytics mr-1"> </span>
                 <br className="v-block d-sm-none"/>
-                Next.js
+                PSC
               </span>
-              <br className="v-block d-lg-none"/> Starter Project
+              <br className="v-block d-lg-none"/> Public Safety Checklist
             </h1>
             <p className="lead mb-5">
-              A reference and template for React projects
+              A search for DOC generated risk score.
             </p>
             <p className="text-right">
-              <a href="https://github.com/iaincollins/nextjs-starter" className="btn btn-outline-light btn-lg"><span className="icon ion-logo-github mr-2"/> Download from GitHub</a>
+              <a href="/search" className="btn btn-outline-light btn-lg"><span className="icon ion-ios-search mr-2"/> Search Now</a>
             </p>
             <style jsx>{`
               .display-2  {
@@ -50,10 +51,10 @@ export default class extends Page {
           </Container>
         </Jumbotron>
         <Container>
-          <p className="text-muted small">
+          {/* <p className="text-muted small">
             * This project is not associated with Next.js or Zeit.
-          </p>
-          <h2 className="text-center display-4 mt-5 mb-2">Features</h2>
+          </p> */}
+          {/* <h2 className="text-center display-4 mt-5 mb-2">Learn More</h2>
           <Row className="pb-5">
             <Col xs="12" sm="4" className="pt-5">
               <h3 className="text-center mb-4">Sessions / Security</h3>
@@ -82,11 +83,10 @@ export default class extends Page {
                 <ListGroupItem><a className="text-dark" href="http://sass-lang.com/">SASS</a></ListGroupItem>
               </ListGroup>
             </Col>
-          </Row>
+          </Row> */}
           <h2 className="text-center display-4 mt-2 mb-5">Getting Started</h2>
           <p>
-            <a href="https://github.com/zeit/next.js">Next.js</a> from <a href="https://zeit.co">Zeit</a> makes creating
-            websites with React easy. 
+            <a href="https://github.com/zeit/next.js">Login</a> or <a href="https://zeit.co">create an account</a> to start searching for riskscores.
           </p>
           <p>
             This project integrates several concepts to show how you can use them together in a Next.js project.

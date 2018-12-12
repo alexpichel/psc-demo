@@ -23,7 +23,7 @@ export default class extends React.Component {
       signinBtn: React.PropTypes.boolean
     }
   }
-  
+
   constructor(props) {
     super(props)
     this.state = {
@@ -33,7 +33,7 @@ export default class extends React.Component {
     }
     this.toggleModal = this.toggleModal.bind(this)
   }
-  
+
   async toggleModal(e) {
     if (e) e.preventDefault()
 
@@ -48,7 +48,7 @@ export default class extends React.Component {
       modal: !this.state.modal
     })
   }
-  
+
   render() {
     return (
       <React.Fragment>
@@ -62,7 +62,7 @@ export default class extends React.Component {
         <Navbar light className="navbar navbar-expand-md pt-3 pb-3">
           <Link prefetch href="/">
             <NavbarBrand href="/">
-              <span className="icon ion-md-home mr-1"></span> {Package.name}
+              <span className="icon ion-ios-analytics mr-1"></span> {Package.name}
             </NavbarBrand>
           </Link>
           <input className="nojs-navbar-check" id="nojs-navbar-check" type="checkbox" aria-label="Menu"/>
@@ -71,23 +71,17 @@ export default class extends React.Component {
             <Nav navbar>
               <div tabIndex="1" className="dropdown nojs-dropdown">
                 <div className="nav-item">
-                  <span className="dropdown-toggle nav-link">Examples</span>
+                  <span className="dropdown-toggle nav-link">Menu</span>
                 </div>
                 <div className="dropdown-menu">
-                  <Link prefetch href="/examples/authentication">
-                    <a href="/examples/authentication" className="dropdown-item">Auth</a>
+                  <Link prefetch href="/search">
+                    <a href="/search" className="dropdown-item">Search</a>
                   </Link>
-                  <Link prefetch href="/examples/async">
-                    <a href="/examples/async" className="dropdown-item">Async Data</a>
+                  <Link prefetch href="/about">
+                    <a href="/about" className="dropdown-item">About</a>
                   </Link>
-                  <Link prefetch href="/examples/layout">
-                    <a href="/examples/layout" className="dropdown-item">Layout</a>
-                  </Link>
-                  <Link prefetch href="/examples/routing">
-                    <a href="/examples/routing" className="dropdown-item">Routing</a>
-                  </Link>
-                  <Link prefetch href="/examples/styling">
-                    <a href="/examples/styling" className="dropdown-item">Styling</a>
+                  <Link prefetch href="/contact">
+                    <a href="/contact" className="dropdown-item">Contact</a>
                   </Link>
                 </div>
               </div>
@@ -138,22 +132,16 @@ export class MainBody extends React.Component {
               {this.props.children}
             </Col>
             <Col xs="12" md="3" lg="2" style={{paddingTop: '1em'}}>
-              <h5 className="text-muted text-uppercase">Examples</h5>
+              {/* <h5 className="text-muted text-uppercase">Menu</h5> */}
               <ListGroup>
                 <ListGroupItem>
-                  <Link prefetch href="/examples/authentication"><a href="/examples/authentication" className="d-block">Auth</a></Link>
+                  <Link prefetch href="/search"><a href="/search" className="d-block">Search</a></Link>
                 </ListGroupItem>
                 <ListGroupItem>
-                    <Link prefetch href="/examples/async"><a href="/examples/async" className="d-block">Async</a></Link>
+                    <Link prefetch href="/about"><a href="/about" className="d-block">About</a></Link>
                 </ListGroupItem>
                 <ListGroupItem>
-                  <Link prefetch href="/examples/layout"><a href="/examples/layout" className="d-block">Layout</a></Link>
-                </ListGroupItem>
-                <ListGroupItem>
-                  <Link prefetch href="/examples/routing"><a href="/examples/routing" className="d-block">Routing</a></Link>
-                </ListGroupItem>
-                <ListGroupItem>
-                    <Link prefetch href="/examples/styling"><a href="/examples/styling" className="d-block">Styling</a></Link>
+                  <Link prefetch href="/contact"><a href="/contact" className="d-block">Contact</a></Link>
                 </ListGroupItem>
               </ListGroup>
             </Col>
@@ -172,7 +160,7 @@ export class UserMenu extends React.Component {
 
    async handleSignoutSubmit(event) {
      event.preventDefault()
-     
+
      // Save current URL so user is redirected back here after signing out
      const cookies = new Cookies()
      cookies.set('redirect_url', window.location.pathname, { path: '/' })
@@ -180,7 +168,7 @@ export class UserMenu extends React.Component {
      await NextAuth.signout()
      Router.push('/')
    }
-   
+
   render() {
     if (this.props.session && this.props.session.user) {
       // If signed in display user dropdown menu
@@ -254,7 +242,7 @@ export class AdminMenuItem extends React.Component {
 export class SigninModal extends React.Component {
   render() {
     if (this.props.providers === null) return null
-    
+
     return (
       <Modal isOpen={this.props.modal} toggle={this.props.toggleModal} style={{maxWidth: 700}}>
         <ModalHeader>Sign up / Sign in</ModalHeader>
